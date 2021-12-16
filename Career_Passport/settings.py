@@ -153,7 +153,7 @@ AUTH_USER_MODEL='accounts.CustomUser'
 LOGIN_REDIRECT_URL='accounts:index'
 ACCOUNT_LOGOUT_REDIRECT_URL='accounts:login'
 
-MEDIA_ROOT='/usr/share/nginx/html/static'
+MEDIA_ROOT='/usr/share/nginx/html/media'
 MEDIA_URL='/media/'
 
 AWS_SES_ACCESS_KEY_ID=os.environ.get('AWS_SES_ACCESS_KEY_ID')
