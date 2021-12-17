@@ -14,8 +14,8 @@ class FileUploadView(LoginRequiredMixin,TeacherMixin,generic.CreateView):
     form_class=FileUploadForm
 
     def post(self,request,*args,**kwargs):
-        if FileSave.objects.filter(title=request.POST['title'],semester=request.POST['semester']):
-            file=FileSave.objects.get(title=request.POST['title'],semester=request.POST['semester'])
+        if FileSave.objects.filter(title=request.POST['title'],semester=request.POST['semester'],event_name=request.POST['event_name']):
+            file=FileSave.objects.get(title=request.POST['title'],semester=request.POST['semester'],event_name=request.POST['event_name'])
         else:    
             file=FileSave()
         file.title=request.POST['title']
@@ -39,8 +39,8 @@ class event_output(LoginRequiredMixin,StudentMixin,generic.DetailView):
         def get_object(semester):
             data_store=[]
             if FileSave.objects.filter(semester=semester):
-                event_object=[]
                 for i in range(1,4):
+                    event_object=[]
                     if FileSave.objects.filter(event_name=i,semester=semester):
                         pre_event_object=FileSave.objects.filter(event_name=i,semester=semester)
                         for item in pre_event_object:

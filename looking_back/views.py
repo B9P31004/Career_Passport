@@ -3,7 +3,7 @@ from django.views import generic
 from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
-from Career_Passport.mixins import StudentMixin,StudentIndexMixin
+from Career_Passport.mixins import StudentMixin,StudentIndexMixin,Student_Teacher_Mixin
 from itertools import chain
 from file_uploader.models import FileSave
 import json
@@ -379,7 +379,7 @@ class book(LoginRequiredMixin,StudentIndexMixin,generic.TemplateView):
         print(data)
         return render(request,'looking_back/book.html',context)
 
-class EventView(LoginRequiredMixin,StudentIndexMixin,generic.TemplateView):
+class EventView(LoginRequiredMixin,StudentMixin,generic.TemplateView):
     template_name='looking_back/event.html'
 
 class load(generic.TemplateView):

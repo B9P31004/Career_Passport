@@ -326,3 +326,6 @@ class grade_output_confirm(LoginRequiredMixin,TeacherMixin,generic.DetailView):
             }
             response_json=json.dumps(response)
         return HttpResponse(response_json)
+
+class EventView(LoginRequiredMixin,TeacherMixin,generic.TemplateView):
+    template_name='teacher_confirmation/event.html'

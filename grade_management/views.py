@@ -21,30 +21,42 @@ class grade_input(LoginRequiredMixin,StudentMixin,generic.FormView):
         if 'button_input' in request.POST:
             context={
                 'grade_lists':[
-                    request.POST.get('school_year'),
-                    request.POST.get('semester'),
-                    request.POST.get('regular_test'),
-                    request.POST.get('national_language'),
-                    request.POST.get('math'),
-                    request.POST.get('english'),
-                    request.POST.get('social_studies'),
-                    request.POST.get('science'),
-                    request.POST.get('music'),
-                    request.POST.get('art'),
-                    request.POST.get('technical_arts_and_home_economics'),
-                    request.POST.get('health_and_physical_education')
+                    '学年：　'+request.POST.get('school_year'),
+                    '学期：　'+request.POST.get('semester'),
+                    'テスト：　'+request.POST.get('regular_test'),
+                    '国語：　'+request.POST.get('national_language'),
+                    '数学：　'+request.POST.get('math'),
+                    '英語：　'+request.POST.get('english'),
+                    '社会：　'+request.POST.get('social_studies'),
+                    '理科：　'+request.POST.get('science'),
+                    '音楽：　'+request.POST.get('music'),
+                    '美術：　'+request.POST.get('art'),
+                    '技術家庭科：　'+request.POST.get('technical_arts_and_home_economics'),
+                    '体育：　'+request.POST.get('health_and_physical_education')
                 ]
             }
             request.session['form_data']=request.POST
             return render(request,'grade_management/grade_register_confirm.html',context)
         elif 'button_confirm' in request.POST:
+            grade=grades()
             form=request.session.get('form_data')
             school_year=form['school_year']
             semester=form['semester']
             regular_test=form['regular_test']
             if grades.objects.filter(UniqueID=self.request.user,school_year=school_year,semester=semester,regular_test=regular_test).exists():
+                grade=grades.objects.get(UniqueID=self.request.user,school_year=school_year,semester=semester,regular_test=regular_test)
+                grade.national_language=form['national_language']
+                grade.math=form['math']
+                grade.english=form['english']
+                grade.social_studies=form['social_studies']
+                grade.science=form['science']
+                grade.music=form['music']
+                grade.art=form['art']
+                grade.technical_arts_and_home_economics=form['technical_arts_and_home_economics']
+                grade.health_and_physical_education=form['health_and_physical_education']
+                grade.save()
                 context={
-                    'comment':'データが既にあります。更新ページから更新してください'
+                    'comment':'成功しました'
                 }
                 return render(request,'looking_back/career_passport_result.html',context)
             else:

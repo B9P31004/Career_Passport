@@ -472,3 +472,80 @@ a#home{
     font-weight: normal;
     font-size: 30px;
 }
+button[name='button_confirm']{
+    left: 0px;
+	top: 15px;
+	overflow: visible;
+	margin-left: 89px;
+	width: 212px;
+	height: 70px;
+	line-height: 50px;
+	margin-top: -5px;
+	text-align: center;
+	font-family: Heisei Maru Gothic Std;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 40px;
+	color: rgba(255,255,255,1);
+	background-color: rgba(44,195,242,1);
+	border-radius: 1em;
+}
+button[name='button_confirm_back']{
+    left: 0px;
+	top: 15px;
+	overflow: visible;
+	margin-left: 89px;
+	width: 212px;
+	height: 70px;
+	line-height: 50px;
+	margin-top: -5px;
+	text-align: center;
+	font-family: Heisei Maru Gothic Std;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 40px;
+	color: rgba(255,255,255,1);
+	background-color: rgba(44,195,242,1);
+	border-radius: 1em;
+}
+div#test{
+	margin-left:100px;
+	margin-bottom:30px;
+	font-family: Heisei Maru Gothic Std;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+}
+div#grade_label{
+	font-family: Heisei Maru Gothic Std;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+}
+div#grade_div>select,input{
+	height:50px;
+	width:200px;
+	font-family: Heisei Maru Gothic Std;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	border:2px solid rgb(87, 87, 87);
+}
+button.button_grade{
+	left: 0px;
+	top: 15px;
+	overflow: visible;
+	margin-left: 269px;
+	width: 212px;
+	height: 70px;
+	line-height: 50px;
+	margin-top: -5px;
+	text-align: center;
+	font-family: Heisei Maru Gothic Std;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 40px;
+	color: rgba(255,255,255,1);
+	background-color: rgba(44,195,242,1);
+	border-radius: 1em;
+}

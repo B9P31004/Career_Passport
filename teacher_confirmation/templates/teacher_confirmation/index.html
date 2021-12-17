@@ -179,16 +179,10 @@
         <span>▸過去の診断を見る</span>
     </div>
 </div>-->
-<div id="n__cx">
-    <span>▸1学期</span>
-</div>
 <div id="n__cy">
-    <span>▸2学期</span>
-</div>
-<div id="n__cz">
-    <span>▸3学期</span>
+    <a id="link_semester_w" href="{% url 'teacher_confirmation:event' pk=user.pk %}">▸見る</a>
 </div>
 <div id="Text_c">
-    <span>学期</span>
+    <span>全学期</span>
 </div>
 {% endblock content %}

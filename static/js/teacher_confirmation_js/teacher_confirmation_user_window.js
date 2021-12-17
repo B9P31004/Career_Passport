@@ -1,12 +1,18 @@
 $(function(){
     var flag=1;
+    var pk=$('div#teacher_ID').html();
     $(document).on('click',function(e) {
         if($(e.target).closest('div#Text').length){
             window.location.href = "/teacher_confirmation/teacher_confirm";
         }
         if($(e.target).closest('div#n_11,div#n_12').length){
-            var pk=$('div#teacher_ID').html();
             window.location.href = "/teacher_confirmation/student_list/"+pk;
+        }
+        if($(e.target).closest('div#n_13').length){
+            window.location.href = "/file_uploader/file_upload/"+pk;
+        }
+        if($(e.target).closest('div#n_14').length){
+            window.location.href = "/teacher_confirmation/teacher_confirm";
         }
         if(!$(e.target).closest('div#n_4__1').length) {
             if(flag==-1){

@@ -5,6 +5,7 @@ $(function(){
     $('div#n_11__').css("left","79px");
     $('div#n_11__').css("width","357px");
     $('div#n_15').hide();
+    $('div#n_1__1').hide();
     if (flag==1) {}
     else{
         flag=occupational_aptitude();
@@ -14,7 +15,7 @@ $(function(){
 
 function occupational_aptitude(){
     var url=$('#occupational_aptitude_url').html();
-    var height=880;
+    var height=2380;
     var list=[];
     $.ajax({
         url:url,

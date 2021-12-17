@@ -25,4 +25,5 @@ urlpatterns = [
     path('career_passport_confirm/<int:pk>/<int:id>',views.career_passport_confirm.as_view(),name="career_passport_confirm"),
     path('career_passport_confirm_output/<int:pk>/<int:id>',views.career_passport_confirm_output.as_view(),name="career_passport_confirm_output"),
     path('grade_output_confirm/<int:pk>/<int:id>',views.grade_output_confirm.as_view(),name="grade_output_confirm"),
+    path('event/<int:pk>',views.EventView.as_view(),name="event"),
 ]

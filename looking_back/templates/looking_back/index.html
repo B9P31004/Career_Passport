@@ -7,7 +7,7 @@
 
 {% block content %}
 <svg class="n_272">
-    <rect id="n_272" rx="0" ry="0" x="0" y="0" width="1024" height="1430">
+    <rect id="n_272" rx="0" ry="0" x="0" y="0" width="1024" height="1700">
     </rect>
 </svg>
 <div id="n_16">
@@ -173,6 +173,7 @@
         <a id="link_semester_w" href="{% url 'looking_back:occupational_aptitude_result' pk=user.pk %}">▸過去の診断を見る</a>
     </div>
 </div>
+<a id="grade" href="{% url 'grade_management:grade_input' pk=user.pk %}">▶成績入力</a>
 <!--<div id="n__cx">
     <span>▸1学期</span>
 </div>-->
