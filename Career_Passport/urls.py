@@ -27,4 +27,3 @@ urlpatterns = [
     path('teacher_confirmation/',include('teacher_confirmation.urls')),
     path('file_uploader/',include('file_uploader.urls')),
 ]
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
