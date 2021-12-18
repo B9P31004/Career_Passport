@@ -15,7 +15,7 @@ class CustomUserAdmin(UserAdmin,admin.ModelAdmin):
         return super().formfield_for_manytomany(db_field, request, **kwargs)"""
     
     fieldsets=(
-        (None,{'fields':('user_ID','password')}),
+        (None,{'fields':('user_ID','name','password')}),
         ('personal info',{'fields':('school_ID','student_year','student_class')}),
         ('permissions',{'fields':('is_active','is_admin','user_permissions','role','category_type')}),
     )

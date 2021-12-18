@@ -41,8 +41,8 @@ class event_output(LoginRequiredMixin,StudentMixin,generic.DetailView):
             if FileSave.objects.filter(semester=semester):
                 for i in range(1,4):
                     event_object=[]
-                    if FileSave.objects.filter(event_name=i,semester=semester):
-                        pre_event_object=FileSave.objects.filter(event_name=i,semester=semester)
+                    if FileSave.objects.filter(school=self.request.user.school_ID.id,event_name=i,semester=semester):
+                        pre_event_object=FileSave.objects.filter(school=self.request.user.school_ID.id,event_name=i,semester=semester)
                         for item in pre_event_object:
                             event_object.append(item.file.url)
                         data_store.append(event_object)
