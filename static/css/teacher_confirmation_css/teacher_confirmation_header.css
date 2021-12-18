@@ -1,3 +1,9 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+
+html{
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
 .mediaViewInfo {
 	--web-view-name: index;
 	--web-view-id: index;
@@ -8,10 +14,8 @@
 	--web-view-ids: index;
 }
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	border: none;
+	margin-left: auto;
+	padding-right: auto;
 }
 @keyframes fadein {
 
@@ -29,7 +33,7 @@
 .n_273 {
 	position: absolute;
 	overflow: visible;
-	width: 1024px;
+	width: 100%;
 	height: 119px;
 	left: 0px;
 	top: 0px;
